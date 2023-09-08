@@ -1,3 +1,3 @@
 # testRedir
 is it working?
-[test]:(http://ms-edu-secureassessment:forms.office.com/r/Pjd9UbRPyd#enforceLockdown)
+[test]:(ms-edu-secureassessment:forms.office.com/r/Pjd9UbRPyd#enforceLockdown)
