@@ -1,19 +1,6 @@
 <HTML>
   <head>
-    <script>
-      window.onload = function(){
-        let  divIsSecure = document.getElementById('isSecure');
-        let  divDevInfo = document.getElementById('devInfo');
-        let  divProcessList = document.getElementById('processList');
-        let  divPermissive = document.getElementById('permissive');
-        let  divShowMAC = document.getElementById('showMAC');
-        let  divIsRemote = document.getElementById('isRemote');
-        let  divIsVM = document.getElementById('isVM');
-
-        void window.browser.SecureBrowser.security.isEnvironmentSecure(function cb1 () {divIsSecure.innerHTML = state.secure});
-        document.getElementById("header").innerHTML = "updated";
-      }
-    </script>
+    
   </head>
   <body>
     <h1 id="header">Testing</h1>
@@ -28,7 +15,20 @@
     <button onclick="window.browser.SecureBrowser.security.close(restart);">Close</button>
     <button onclick="browser.SecureBrowser.security.close(restart);">Close</button>
     <button onclick="SecureBrowser.security.close(restart);">Close</button>
-    
+    <script>
+      window.onload = function(){
+        let  divIsSecure = document.getElementById('isSecure');
+        let  divDevInfo = document.getElementById('devInfo');
+        let  divProcessList = document.getElementById('processList');
+        let  divPermissive = document.getElementById('permissive');
+        let  divShowMAC = document.getElementById('showMAC');
+        let  divIsRemote = document.getElementById('isRemote');
+        let  divIsVM = document.getElementById('isVM');
+
+        void window.browser.SecureBrowser.security.isEnvironmentSecure(function cb1 () {divIsSecure.innerHTML = state.secure});
+        document.getElementById("header").innerHTML = "updated";
+      }
+    </script>
   </body>
 
 </HTML>
