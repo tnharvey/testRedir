@@ -11,11 +11,12 @@
         let  divIsVM = document.getElementById('isVM');
 
         void window.browser.SecureBrowser.security.isEnvironmentSecure(function cb1 () {divIsSecure.innerHTML = state.secure});
+        document.getElementById("header").innerHTML = "updated";
       }
     </script>
   </head>
   <body>
-    <h1>Testing</h1>
+    <h1 id="header">Testing</h1>
     <div id="isSecure">null</div>
     <div id="devInfo">null</div>
     <div id="processList">null</div>
@@ -24,6 +25,10 @@
     <div id="isRemote">null</div>
     <div id="isVM">null</div>
     <button onclick="void window.browser.SecureBrowser.security.close(restart);">Close</button>
+    <button onclick="window.browser.SecureBrowser.security.close(restart);">Close</button>
+    <button onclick="browser.SecureBrowser.security.close(restart);">Close</button>
+    <button onclick="SecureBrowser.security.close(restart);">Close</button>
+    
   </body>
 
 </HTML>
