@@ -25,9 +25,18 @@
         let  divIsRemote = document.getElementById('isRemote');
         let  divIsVM = document.getElementById('isVM');
 
-        void window.browser.SecureBrowser.security.isEnvironmentSecure(function cb1 () {divIsSecure.innerHTML = state.secure});
+        SecureBrowser.security.isEnvironmentSecure(function (state) {
+                const secureState = JSON.parse(state);
+                if (secureState.secure === "true") {
+                  divIsSecure.innerHTML = state.secure;
+                } else {
+                  alert("The environment is not secure.");
+                  divIsSecure.innerHTML = state.secure
+                }
+            });
+        
         document.getElementById("header").innerHTML = "updated";
-      }
+        }
     </script>
   </body>
 
