@@ -1,43 +1,52 @@
-<HTML>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Test Wrapper</title>
+</head>
+<body>
+    <h1>Welcome to the Secure Test</h1>
     
-  </head>
-  <body>
-    <h1 id="header">Testing</h1>
-    <div id="isSecure">null</div>
-    <div id="devInfo">null</div>
-    <div id="processList">null</div>
-    <div id="permissive">null</div>
-    <div id="showMAC">null</div>
-    <div id="isRemote">null</div>
-    <div id="isVM">null</div>
-    
-    <button onclick="SecureBrowser.security.close();">Close</button>
+    <!-- The iframe to embed the test -->
+    <iframe id="testFrame" src="" width="800" height="600"></iframe>
+
+    <!-- The "Close Test" button -->
+    <button id="closeTestBtn">Close Test</button>
+
     <script>
-        let  divIsSecure = document.getElementById('isSecure');
-        let  divDevInfo = document.getElementById('devInfo');
-        let  divProcessList = document.getElementById('processList');
-        let  divPermissive = document.getElementById('permissive');
-        let  divShowMAC = document.getElementById('showMAC');
-        let  divIsRemote = document.getElementById('isRemote');
-        let  divIsVM = document.getElementById('isVM');
+      let  checkSecure = false;
+        let  checkPermissive = false;
+        let  devMAC = "";
 
         SecureBrowser.security.isEnvironmentSecure(function (state) {
               const secureState = JSON.parse(state);
-              divIsSecure.innerHTML = secureState.secure;
-            });
-        SecureBrowser.security.getDeviceInfo(function (infoObj) {
-              const thisDevInfo = JSON.parse(infoObj);
-              divDevInfo.innerHTML = thisDevInfo.os + ", " + thisDevInfo.name + ", " + thisDevInfo.version + ", " + thisDevInfo.brand + ", " + thisDevInfo.model;
+              checkSecure = secureState.secure;
             });
         SecureBrowser.security.getPermissiveMode(function (permissiveMode) {
-              divPermissive.innerHTML = permissiveMode;
+              checkPermissive = permissiveMode;
             });
         SecureBrowser.security.getMACAddress(function (addressArray) {
-              divShowMAC.innerHTML = addressArray;
+              devMAC = addressArray;
             });
-        document.getElementById("header").innerHTML = "updated";
-    </script>
-  </body>
+        // Reference to the iframe
+        const testFrame = document.getElementById("testFrame");
 
-</HTML>
+        // Function to launch the test
+        function launchTest() {
+            // Set the source URL of the iframe to the test URL
+            testFrame.src = "https://your-test-url.com"; // Replace with your actual test URL
+        }
+
+        // Function to close the test
+        function closeTest() {
+            // Clear the iframe source URL to close the test
+            SecureBrowser.security.close();
+        }
+
+        // Attach click event handlers to buttons
+        document.getElementById("launchTestBtn").addEventListener("click", launchTest);
+        document.getElementById("closeTestBtn").addEventListener("click", closeTest);
+    </script>
+</body>
+</html>
