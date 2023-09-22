@@ -1,0 +1,31 @@
+<HTML>
+  <head>
+    <script>
+      window.onload = function(){
+        let  divIsSecure = document.getElementById('isSecure');
+        let  divDevInfo = document.getElementById('devInfo');
+        let  divProcessList = document.getElementById('processList');
+        let  divPermissive = document.getElementById('permissive');
+        let  divShowMAC = document.getElementById('showMAC');
+        let  divIsRemote = document.getElementById('isRemote');
+        let  divIsVM = document.getElementById('isVM');
+
+        void SecureBrowser.security.isEnvironmentSecure(Function cb1 () {
+          divIsSecure.innerHTML = state.secure;
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Testing</h1>
+    <div id="isSecure">null</div>
+    <div id="devInfo">null</div>
+    <div id="processList">null</div>
+    <div id="permissive">null</div>
+    <div id="showMAC">null</div>
+    <div id="isRemote">null</div>
+    <div id="isVM">null</div>
+    
+  </body>
+
+</HTML>
