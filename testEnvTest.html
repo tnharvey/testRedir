@@ -26,6 +26,16 @@
               const secureState = JSON.parse(state);
               divIsSecure.innerHTML = secureState.secure;
             });
+        SecureBrowser.security.getDeviceInfo(function (infoObj) {
+              const thisDevInfo = JSON.parse(infoObj);
+              divDevInfo.innerHTML = thisDevInfo.os + ", " + thisDevInfo.name + ", " + thisDevInfo.version + ", " + thisDevInfo.brand + ", " + thisDevInfo.model;
+            });
+        SecureBrowser.security.getPermissiveMode(function (permissiveMode) {
+              divPermissive.innerHTML = permissiveMode;
+            });
+        SecureBrowser.security.getMACAddress(function (addressArray) {
+              divShowMAC.innerHTML = addressArray;
+            });
         document.getElementById("header").innerHTML = "updated";
     </script>
   </body>
