@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Test Wrapper</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="heading">
+            <h1>Welcome to the Secure Test</h1>
+        </div>
+        
+        <div id="test">
+            <!-- The iframe to embed the test -->
+            <iframe id="testFrame"></iframe>
+        </div>
+        <div>
+            <!-- The "Close Test" button -->
+            <span id="closeInfo">Do not close the test until you have completed the test and clicked the submit button.</span>
+            <button id="closeTestBtn" onclick="closeTest">Close Test</button>
+        </div>
+    </div>
+    
+</body>
+</html>

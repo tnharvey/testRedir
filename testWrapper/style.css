@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+
+#testFrame {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 600px;
+}
+
+#closeTestBtn {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    width: 150px;
+}
+
+#closeInfo {
+    position: absolute;
+    right: 100px;
+    top: 150px;
+    width: 150px;
+}
