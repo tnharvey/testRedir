@@ -30,3 +30,5 @@ window.onload = function () {
     let testFrame = document.getElementById("testFrame");
     launchTest();
 }
+
+document.getElementById("closeTestBtn").addEventListener("click", closeTest);
