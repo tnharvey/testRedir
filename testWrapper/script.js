@@ -1,3 +1,8 @@
+//Need a way to initiate login on MS before redirect so browser is already logged in
+//1. Redirect sends students to a SharePoint page (forces login once testApp loads)
+//2. They click link on SP page that takes them to github testWrapper (already signed in)
+// above works except that CLOSE button is now broken, need to figure out why
+
 let  checkSecure = false;
 let  checkPermissive = false;
 let  devMAC = "";
